@@ -1,0 +1,3 @@
+C:/Moje_pliki/Programowanie/STM/Simple_FreeRTOS/Middlewares/ST/STM32_ExtMem_Manager/boot/stm32_boot_xip.c:56:20:BOOT_Application	2
+C:/Moje_pliki/Programowanie/STM/Simple_FreeRTOS/Middlewares/ST/STM32_ExtMem_Manager/boot/stm32_boot_xip.c:83:20:MapMemory	5
+C:/Moje_pliki/Programowanie/STM/Simple_FreeRTOS/Middlewares/ST/STM32_ExtMem_Manager/boot/stm32_boot_xip.c:116:20:JumpToApplication	4

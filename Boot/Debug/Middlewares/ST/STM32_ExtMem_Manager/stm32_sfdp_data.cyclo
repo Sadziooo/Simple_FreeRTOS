@@ -1,0 +1,13 @@
+C:/Moje_pliki/Programowanie/STM/Simple_FreeRTOS/Middlewares/ST/STM32_ExtMem_Manager/nor_sfdp/stm32_sfdp_data.c:1077:20:SFDP_ReadHeader	5
+C:/Moje_pliki/Programowanie/STM/Simple_FreeRTOS/Middlewares/ST/STM32_ExtMem_Manager/nor_sfdp/stm32_sfdp_data.c:1122:20:SFDP_GetHeader	7
+C:/Moje_pliki/Programowanie/STM/Simple_FreeRTOS/Middlewares/ST/STM32_ExtMem_Manager/nor_sfdp/stm32_sfdp_data.c:1173:20:SFDP_CollectData	15
+C:/Moje_pliki/Programowanie/STM/Simple_FreeRTOS/Middlewares/ST/STM32_ExtMem_Manager/nor_sfdp/stm32_sfdp_data.c:1242:20:SFDP_MemoryReset	21
+C:/Moje_pliki/Programowanie/STM/Simple_FreeRTOS/Middlewares/ST/STM32_ExtMem_Manager/nor_sfdp/stm32_sfdp_data.c:1376:20:SFDP_BuildGenericDriver	84
+C:/Moje_pliki/Programowanie/STM/Simple_FreeRTOS/Middlewares/ST/STM32_ExtMem_Manager/nor_sfdp/stm32_sfdp_data.c:1947:38:driver_check_FlagBUSY	3
+C:/Moje_pliki/Programowanie/STM/Simple_FreeRTOS/Middlewares/ST/STM32_ExtMem_Manager/nor_sfdp/stm32_sfdp_data.c:1980:10:sfdp_getfrequencevalue	2
+C:/Moje_pliki/Programowanie/STM/Simple_FreeRTOS/Middlewares/ST/STM32_ExtMem_Manager/nor_sfdp/stm32_sfdp_data.c:1999:20:sfdp_get_paraminfo	26
+C:/Moje_pliki/Programowanie/STM/Simple_FreeRTOS/Middlewares/ST/STM32_ExtMem_Manager/nor_sfdp/stm32_sfdp_data.c:2126:20:sfpd_enter_octal_mode	13
+C:/Moje_pliki/Programowanie/STM/Simple_FreeRTOS/Middlewares/ST/STM32_ExtMem_Manager/nor_sfdp/stm32_sfdp_data.c:2244:20:sfpd_set_dummycycle	11
+C:/Moje_pliki/Programowanie/STM/Simple_FreeRTOS/Middlewares/ST/STM32_ExtMem_Manager/nor_sfdp/stm32_sfdp_data.c:2339:20:JEDEC_Basic_ManageQuadEnableRequierement	12
+C:/Moje_pliki/Programowanie/STM/Simple_FreeRTOS/Middlewares/ST/STM32_ExtMem_Manager/nor_sfdp/stm32_sfdp_data.c:2455:20:JEDEC_Basic_Manage4S4S4SEnableSequence	5
+C:/Moje_pliki/Programowanie/STM/Simple_FreeRTOS/Middlewares/ST/STM32_ExtMem_Manager/nor_sfdp/stm32_sfdp_data.c:2508:20:CheckSFDP_Signature	4
