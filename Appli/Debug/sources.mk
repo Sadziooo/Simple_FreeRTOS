@@ -25,4 +25,5 @@ SUBDIRS := \
 Core/Src \
 Core/Startup \
 Drivers/STM32H7RSxx_HAL_Driver \
+Middlewares/Third_Party/FreeRTOS \
 
