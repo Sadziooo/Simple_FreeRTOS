@@ -6,6 +6,7 @@
 "./Core/Src/sysmem.o"
 "./Core/Src/system_stm32h7rsxx.o"
 "./Core/Startup/startup_stm32h7s3l8hx.o"
+"./Drivers/BSP/STM32H7xx_Nucleo/lan8742.o"
 "./Drivers/STM32H7RSxx_HAL_Driver/stm32h7rsxx_hal.o"
 "./Drivers/STM32H7RSxx_HAL_Driver/stm32h7rsxx_hal_cortex.o"
 "./Drivers/STM32H7RSxx_HAL_Driver/stm32h7rsxx_hal_dma.o"
