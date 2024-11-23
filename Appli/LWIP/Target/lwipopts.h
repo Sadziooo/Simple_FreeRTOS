@@ -48,9 +48,11 @@
 /* LwIP Stack Parameters (modified compared to initialization value in opt.h) -*/
 /* Parameters set in STM32CubeMX LwIP Configuration GUI -*/
 /*----- Default value in ETH configuration GUI in CubeMx: 1524 -----*/
-#define ETH_RX_BUFFER_SIZE 1536
+#define ETH_RX_BUFFER_SIZE 1000
 /*----- Value in opt.h for MEM_ALIGNMENT: 1 -----*/
 #define MEM_ALIGNMENT 4
+/*----- Default Value for MEM_SIZE: 1600 ---*/
+#define MEM_SIZE 16*1024
 /*----- Default Value for H7 devices: 0x30044000 -----*/
 #define LWIP_RAM_HEAP_POINTER 0x24040000
 /*----- Value supported for H7 devices: 1 -----*/
