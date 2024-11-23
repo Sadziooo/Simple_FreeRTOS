@@ -130,8 +130,8 @@ void Start_Default_Task(void *argument)
   /* Infinite loop */
   for(;;)
   {
-	  osThreadTerminate(defaultTaskHandle);
-    osDelay(1);
+	osThreadTerminate(defaultTaskHandle);
+	osDelay(1);
   }
   /* USER CODE END Start_Default_Task */
 }
