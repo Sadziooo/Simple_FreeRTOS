@@ -20,6 +20,7 @@
 #include "main.h"
 #include "FreeRTOS.h"
 #include "lwip.h"
+#include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -43,30 +44,13 @@
 
 /* Private variables ---------------------------------------------------------*/
 
-/* Definitions for defaultTask */
-osThreadId_t defaultTaskHandle;
-const osThreadAttr_t defaultTask_attributes = {
-  .name = "defaultTask",
-  .stack_size = 256 * 4,
-  .priority = (osPriority_t) osPriorityNormal,
-};
-/* Definitions for LedBlinker */
-osThreadId_t LedBlinkerHandle;
-const osThreadAttr_t LedBlinker_attributes = {
-  .name = "LedBlinker",
-  .stack_size = 512 * 4,
-  .priority = (osPriority_t) osPriorityHigh,
-};
 /* USER CODE BEGIN PV */
 
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
 static void MPU_Config(void);
-static void MX_GPIO_Init(void);
-void Start_Default_Task(void *argument);
-void Start_LedBlinker_Task(void *argument);
-
+void MX_FREERTOS_Init(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -123,36 +107,8 @@ int main(void)
   /* Init scheduler */
   osKernelInitialize();
 
-  /* USER CODE BEGIN RTOS_MUTEX */
-  /* add mutexes, ... */
-  /* USER CODE END RTOS_MUTEX */
-
-  /* USER CODE BEGIN RTOS_SEMAPHORES */
-  /* add semaphores, ... */
-  /* USER CODE END RTOS_SEMAPHORES */
-
-  /* USER CODE BEGIN RTOS_TIMERS */
-  /* start timers, add new ones, ... */
-  /* USER CODE END RTOS_TIMERS */
-
-  /* USER CODE BEGIN RTOS_QUEUES */
-  /* add queues, ... */
-  /* USER CODE END RTOS_QUEUES */
-
-  /* Create the thread(s) */
-  /* creation of defaultTask */
-  defaultTaskHandle = osThreadNew(Start_Default_Task, NULL, &defaultTask_attributes);
-
-  /* creation of LedBlinker */
-  LedBlinkerHandle = osThreadNew(Start_LedBlinker_Task, NULL, &LedBlinker_attributes);
-
-  /* USER CODE BEGIN RTOS_THREADS */
-  /* add threads, ... */
-  /* USER CODE END RTOS_THREADS */
-
-  /* USER CODE BEGIN RTOS_EVENTS */
-  /* add events, ... */
-  /* USER CODE END RTOS_EVENTS */
+  /* Call init function for freertos objects (in cmsis_os2.c) */
+  MX_FREERTOS_Init();
 
   /* Start scheduler */
   osKernelStart();
@@ -170,93 +126,9 @@ int main(void)
   /* USER CODE END 3 */
 }
 
-/**
-  * @brief GPIO Initialization Function
-  * @param None
-  * @retval None
-  */
-static void MX_GPIO_Init(void)
-{
-  GPIO_InitTypeDef GPIO_InitStruct = {0};
-/* USER CODE BEGIN MX_GPIO_Init_1 */
-/* USER CODE END MX_GPIO_Init_1 */
-
-  /* GPIO Ports Clock Enable */
-  __HAL_RCC_GPIOB_CLK_ENABLE();
-  __HAL_RCC_GPIOG_CLK_ENABLE();
-  __HAL_RCC_GPIOA_CLK_ENABLE();
-  __HAL_RCC_GPIOD_CLK_ENABLE();
-
-  /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(LD3_RED_GPIO_Port, LD3_RED_Pin, GPIO_PIN_RESET);
-
-  /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOD, LD2_YELLOW_Pin|LD1_GREEN_Pin, GPIO_PIN_RESET);
-
-  /*Configure GPIO pin : LD3_RED_Pin */
-  GPIO_InitStruct.Pin = LD3_RED_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(LD3_RED_GPIO_Port, &GPIO_InitStruct);
-
-  /*Configure GPIO pins : LD2_YELLOW_Pin LD1_GREEN_Pin */
-  GPIO_InitStruct.Pin = LD2_YELLOW_Pin|LD1_GREEN_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
-
-/* USER CODE BEGIN MX_GPIO_Init_2 */
-/* USER CODE END MX_GPIO_Init_2 */
-}
-
 /* USER CODE BEGIN 4 */
 
 /* USER CODE END 4 */
-
-/* USER CODE BEGIN Header_Start_Default_Task */
-/**
-  * @brief  Function implementing the defaultTask thread.
-  * @param  argument: Not used
-  * @retval None
-  */
-/* USER CODE END Header_Start_Default_Task */
-void Start_Default_Task(void *argument)
-{
-  /* USER CODE BEGIN 5 */
-	  MX_LWIP_Init();
-  /* Infinite loop */
-  for(;;)
-  {
-	osThreadTerminate(defaultTaskHandle);
-	osDelay(1);
-  }
-  /* USER CODE END 5 */
-}
-
-/* USER CODE BEGIN Header_Start_LedBlinker_Task */
-/**
-* @brief Function implementing the LedBlinker thread.
-* @param argument: Not used
-* @retval None
-*/
-/* USER CODE END Header_Start_LedBlinker_Task */
-void Start_LedBlinker_Task(void *argument)
-{
-  /* USER CODE BEGIN Start_LedBlinker_Task */
-  /* Infinite loop */
-  for(;;)
-  {
-	HAL_GPIO_TogglePin(LD1_GREEN_GPIO_Port, LD1_GREEN_Pin);
-    osDelay(200);
-	HAL_GPIO_TogglePin(LD2_YELLOW_GPIO_Port, LD2_YELLOW_Pin);
-    osDelay(200);
-	HAL_GPIO_TogglePin(LD3_RED_GPIO_Port, LD3_RED_Pin);
-    osDelay(200);
-  }
-  /* USER CODE END Start_LedBlinker_Task */
-}
 
  /* MPU Configuration */
 
