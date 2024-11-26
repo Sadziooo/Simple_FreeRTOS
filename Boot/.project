@@ -107,6 +107,11 @@
 			<locationURI>PARENT-1-PROJECT_LOC/Drivers/STM32H7RSxx_HAL_Driver/Src/stm32h7rsxx_hal_xspi.c</locationURI>
 		</link>
 		<link>
+			<name>Drivers/BSP/STM32H7xx_Nucleo/lan8742.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Drivers/BSP/Components/lan8742/lan8742.c</locationURI>
+		</link>
+		<link>
 			<name>Middlewares/ST/STM32_ExtMem_Manager/stm32_boot_xip.c</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/Middlewares/ST/STM32_ExtMem_Manager/boot/stm32_boot_xip.c</locationURI>

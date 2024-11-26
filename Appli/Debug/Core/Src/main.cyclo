@@ -1,6 +1,4 @@
-../Core/Src/main.c:82:5:main	5
-../Core/Src/main.c:174:13:MX_GPIO_Init	1
-../Core/Src/main.c:219:6:Start_Default_Task	1
-../Core/Src/main.c:237:6:Start_LedBlinker_Task	1
-../Core/Src/main.c:261:6:HAL_TIM_PeriodElapsedCallback	2
-../Core/Src/main.c:278:6:Error_Handler	1
+../Core/Src/main.c:67:5:main	5
+../Core/Src/main.c:135:13:MPU_Config	1
+../Core/Src/main.c:216:6:HAL_TIM_PeriodElapsedCallback	2
+../Core/Src/main.c:233:6:Error_Handler	1

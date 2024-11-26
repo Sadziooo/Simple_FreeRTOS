@@ -196,6 +196,15 @@ SECTIONS
     . = ALIGN(8);
   } >DTCM
 
+  .lwip_sec (NOLOAD) : {
+    . = ABSOLUTE(0x24020000);
+    *(.RxDescripSection)
+    . = ABSOLUTE(0x24020080);
+    *(.TxDescripSection)
+    . = ABSOLUTE(0x24020100);
+    *(.Rx_PoolSection)
+  } >RAM
+
   /* Remove information from the compiler libraries */
   /DISCARD/ :
   {

@@ -44,7 +44,7 @@
 /* #define HAL_DCMIPP_MODULE_ENABLED   */
 /* #define HAL_DMA2D_MODULE_ENABLED   */
 /* #define HAL_DTS_MODULE_ENABLED   */
-/* #define HAL_ETH_MODULE_ENABLED   */
+#define HAL_ETH_MODULE_ENABLED
 /* #define HAL_FDCAN_MODULE_ENABLED   */
 /* #define HAL_GFXMMU_MODULE_ENABLED   */
 /* #define HAL_GFXTIM_MODULE_ENABLED   */
@@ -174,7 +174,7 @@
   * @brief This is the HAL system configuration section
   */
 #define  VDD_VALUE                    3300UL /*!< Value of VDD in mv */
-#define  TICK_INT_PRIORITY            (15UL)/*!< tick interrupt priority (lowest by default) */
+#define  TICK_INT_PRIORITY            (4UL)/*!< tick interrupt priority (lowest by default) */
 #define  USE_RTOS                     0U
 
 /* ########################## Assert Selection ############################## */
