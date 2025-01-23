@@ -39,15 +39,15 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  17 .debug_macro  00041210  00000000  00000000  00056642  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_line   0003e6c9  00000000  00000000  00097852  2**0
+ 18 .debug_line   0003e6c3  00000000  00000000  00097852  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .debug_str    00164eb7  00000000  00000000  000d5f1b  2**0
+ 19 .debug_str    00164eb7  00000000  00000000  000d5f15  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 20 .comment      00000043  00000000  00000000  0023add2  2**0
+ 20 .comment      00000043  00000000  00000000  0023adcc  2**0
                   CONTENTS, READONLY
- 21 .debug_frame  0000a1c0  00000000  00000000  0023ae18  2**2
+ 21 .debug_frame  0000a1c0  00000000  00000000  0023ae10  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 22 .debug_line_str 00000064  00000000  00000000  00244fd8  2**0
+ 22 .debug_line_str 00000064  00000000  00000000  00244fd0  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -204,15 +204,15 @@ void Start_Default_Task(void *argument)
   /* Infinite loop */
   for(;;)
   {
-	  osThreadTerminate(defaultTaskHandle);
+	osThreadTerminate(defaultTaskHandle);
 700003dc:	4b04      	ldr	r3, [pc, #16]	@ (700003f0 <Start_Default_Task+0x20>)
 700003de:	681b      	ldr	r3, [r3, #0]
 700003e0:	4618      	mov	r0, r3
 700003e2:	f005 faa5 	bl	70005930 <osThreadTerminate>
-    osDelay(1);
+	osDelay(1);
 700003e6:	2001      	movs	r0, #1
 700003e8:	f005 face 	bl	70005988 <osDelay>
-	  osThreadTerminate(defaultTaskHandle);
+	osThreadTerminate(defaultTaskHandle);
 700003ec:	bf00      	nop
 700003ee:	e7f5      	b.n	700003dc <Start_Default_Task+0xc>
 700003f0:	240000ac 	.word	0x240000ac
