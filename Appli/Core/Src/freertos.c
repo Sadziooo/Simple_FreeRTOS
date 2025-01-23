@@ -22,10 +22,11 @@
 #include "task.h"
 #include "main.h"
 #include "FreeRTOS.h"
-#include "lwip.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+
+#include "lwip.h"
 
 /* USER CODE END Includes */
 

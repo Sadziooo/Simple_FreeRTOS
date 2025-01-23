@@ -12692,9 +12692,9 @@ void MX_LWIP_Init(void)
 700049c4:	4b90      	ldr	r3, [pc, #576]	@ (70004c08 <MX_LWIP_Init+0x250>)
 700049c6:	22a8      	movs	r2, #168	@ 0xa8
 700049c8:	705a      	strb	r2, [r3, #1]
-  IP_ADDRESS[2] = 1;
+  IP_ADDRESS[2] = 0;
 700049ca:	4b8f      	ldr	r3, [pc, #572]	@ (70004c08 <MX_LWIP_Init+0x250>)
-700049cc:	2201      	movs	r2, #1
+700049cc:	2200      	movs	r2, #0
 700049ce:	709a      	strb	r2, [r3, #2]
   IP_ADDRESS[3] = 234;
 700049d0:	4b8d      	ldr	r3, [pc, #564]	@ (70004c08 <MX_LWIP_Init+0x250>)
